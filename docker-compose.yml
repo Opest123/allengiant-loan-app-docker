@@ -1,0 +1,76 @@
+networks:
+  loanapp-backend:
+    driver: bridge
+  loanapp-networks:
+    driver: bridge
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfiles/php.dockerfile
+    container_name: loan_app_php
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - "backend.loanapp.test:host-gateway"
+      - "loanapp.test:host-gateway"
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ../allengiant-loan-app-test-backend:/var/www
+      - ./php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - "9001:9000"
+    networks:
+      - loanapp-backend
+      - loanapp-networks
+  frontend:
+    build:
+      context: ../allengiant-loan-app-test-frontend
+      dockerfile: ../allengiant-loan-app-docker/dockerfiles/frontend.dockerfile
+    container_name: loan_app_nginx
+    volumes:
+      - ../allengiant-loan-app-test-frontend:/src
+      - ../allengiant-loan-app-test-frontend/node_modules:/src/node_modules
+    ports:
+      - "8084:80"
+    depends_on:
+      - app
+    networks:
+      - loanapp-networks
+  db:
+    image: mysql:8
+    container_name: loan_app_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3357:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - loanapp-backend
+      - loanapp-networks
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-loanapp
+    restart: unless-stopped
+    ports:
+      - 8004:80
+    expose:
+      - 80
+      - 6001
+    volumes:
+      - ../allengiant-loan-app-test-backend:/var/www
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - loanapp-networks
+    environment:
+      - VIRTUAL_HOST=memorywithyou.test
+      - VIRTUAL_PROTO=http
+      - VIRTUAL_PORT=80
+
+volumes:
+  dbdata:

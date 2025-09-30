@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/allengiant-loan-app-docker.iml" filepath="$PROJECT_DIR$/.idea/allengiant-loan-app-docker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../allengiant-loan-app-test-backend/.idea/allengiant-loan-app-test.iml" filepath="$PROJECT_DIR$/../allengiant-loan-app-test-backend/.idea/allengiant-loan-app-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../allengiant-loan-app-test-frontend/.idea/allengiant-loan-app-test-frontend.iml" filepath="$PROJECT_DIR$/../allengiant-loan-app-test-frontend/.idea/allengiant-loan-app-test-frontend.iml" />
+    </modules>
+  </component>
+</project>

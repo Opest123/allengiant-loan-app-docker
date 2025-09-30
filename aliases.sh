@@ -1,0 +1,5 @@
+alias art="php artisan"
+alias hori="art horizon"
+alias cac="art optimize:clear; art optimize;"
+#alias cac="art modelCache:clear; art optimize:clear; art optimize;"
+alias mc="art modelCache:clear"
