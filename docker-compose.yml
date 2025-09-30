@@ -27,12 +27,14 @@ services:
     build:
       context: ../allengiant-loan-app-test-frontend
       dockerfile: ../allengiant-loan-app-docker/dockerfiles/frontend.dockerfile
-    container_name: loan_app_nginx
+    container_name: loan_app_frontend
     volumes:
-      - ../allengiant-loan-app-test-frontend:/src
-      - ../allengiant-loan-app-test-frontend/node_modules:/src/node_modules
+      - ../allengiant-loan-app-test-frontend:/app
+      -  /app/node_modules
     ports:
-      - "8084:80"
+      - "5173:5173"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     depends_on:
       - app
     networks:

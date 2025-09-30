@@ -1,13 +1,17 @@
-# Build stage
-FROM node:alpine AS build
-WORKDIR /src
-COPY package.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+FROM node:20-alpine
 
-# Production stage
-FROM nginx:alpine
-COPY --from=build /src/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+
+RUN yarn install --frozen-lockfile
+
+# Copy source
+COPY . .
+
+# Expose Vue dev server port
+EXPOSE 5173
+
+# Start dev server
+CMD ["yarn", "dev", "--host", "0.0.0.0"]
