@@ -28,4 +28,4 @@ clear:
 	@make clear_optimize
 
 php:
-	docker exec -it php-memorywithyou zsh
+	docker exec -it loan_app_php zsh

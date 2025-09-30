@@ -6,7 +6,7 @@ networks:
 services:
   app:
     build:
-      context: .
+      context: ./
       dockerfile: dockerfiles/php.dockerfile
     container_name: loan_app_php
     extra_hosts:
@@ -70,7 +70,7 @@ services:
     networks:
       - loanapp-networks
     environment:
-      - VIRTUAL_HOST=memorywithyou.test
+      - VIRTUAL_HOST=loanapp.test
       - VIRTUAL_PROTO=http
       - VIRTUAL_PORT=80
 

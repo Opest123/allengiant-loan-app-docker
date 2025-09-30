@@ -83,3 +83,6 @@ ENV LC_ALL en_US.UTF-8
 
 # Ensure .zshrc is sourced when logging in
 RUN echo "source ~/.zshrc" >> /home/$user/.bashrc
+
+# Switch to non-root user
+USER $user
