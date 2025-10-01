@@ -1,6 +1,5 @@
 # LoanAppTest
 
-<hr/>
 ## Getting Started
 <hr/>
 
