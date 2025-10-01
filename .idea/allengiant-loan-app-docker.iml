@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="allengiant-loan-app-test-frontend" />
     <orderEntry type="module" module-name="allengiant-loan-app-test" />
+    <orderEntry type="module" module-name="allengiant-loan-app-frontend-test" />
   </component>
 </module>

@@ -25,11 +25,11 @@ services:
       - loanapp-networks
   frontend:
     build:
-      context: ../allengiant-loan-app-test-frontend
+      context: ../allengiant-loan-app-frontend-test
       dockerfile: ../allengiant-loan-app-docker/dockerfiles/frontend.dockerfile
     container_name: loan_app_frontend
     volumes:
-      - ../allengiant-loan-app-test-frontend:/app
+      - ../allengiant-loan-app-frontend-test:/app
       -  /app/node_modules
     ports:
       - "5173:5173"

@@ -12,7 +12,7 @@ N.B: Ensure you have installed docker compatible with your system.
 
 - allengiant-loan-app-test-backend
 - allengiant-loan-app-docker
-- allengiant-loan-app-test-frontend
+- allengiant-loan-app-frontend-test
 
 <hr/>
 
