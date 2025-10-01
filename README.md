@@ -1,4 +1,4 @@
-<strong>LoanAppTest</strong>
+# LoanAppTest
 
 <hr/>
 ## Getting Started
@@ -10,9 +10,9 @@ N.B: Ensure you have installed docker compatible with your system.
 
 <strong>Ensure these files are cloned in the same directory</strong>
 
-- allengiant-loan-app-test-backend
-- allengiant-loan-app-docker
-- allengiant-loan-app-frontend-test
+- [allengiant-loan-app-test-backend](https://github.com/Opest123/allengiant-loan-app-test-backend)
+- [allengiant-loan-app-docker](https://github.com/Opest123/allengiant-loan-app-docker)
+- [allengiant-loan-app-frontend-test](https://github.com/Opest123/allengiant-loan-app-frontend-test)
 
 <hr/>
 
