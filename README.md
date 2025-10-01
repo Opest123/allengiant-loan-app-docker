@@ -40,7 +40,7 @@ N.B: Ensure you have installed docker compatible with your system.
 
 <hr/>
 
-Frontend URL: http://loanapp.test:8084/
+Frontend URL: http://loanapp.test:5173
 
 <hr/>
 
