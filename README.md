@@ -1,7 +1,6 @@
 # LoanAppTest
 
 ## Getting Started
-<hr/>
 
 N.B: Ensure you have installed docker compatible with your system.
 
